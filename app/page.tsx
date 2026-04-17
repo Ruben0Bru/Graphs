@@ -107,12 +107,27 @@ export default function Home() {
         body { margin: 0; background-color: #0d1117; color: #c9d1d9; font-family: sans-serif; }
         .layout-container { display: flex; flex-direction: column; min-height: 100vh; padding: 20px; gap: 20px; max-width: 1400px; margin: 0 auto; }
         .sidebar { flex: 1; display: flex; flex-direction: column; gap: 15px; justify-content: center; }
-        .graph-area { flex: 3; background-color: #161b22; border-radius: 16px; border: 1px solid #30363d; height: 80vh; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        
+        /* CAMBIO CLAVE PARA MÓVILES: Altura fija y ancho al 100% */
+        .graph-area { 
+          width: 100%;
+          height: 500px; 
+          background-color: #161b22; 
+          border-radius: 16px; 
+          border: 1px solid #30363d; 
+          box-shadow: 0 4px 20px rgba(0,0,0,0.5); 
+        }
+        
         .btn { padding: 15px 20px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .btn-active { background-color: #58a6ff; color: #0d1117; box-shadow: 0 0 10px rgba(88, 166, 255, 0.5); }
         .btn-inactive { background-color: #21262d; color: #c9d1d9; border: 1px solid #30363d; }
         .btn-inactive:hover { background-color: #30363d; }
-        @media (min-width: 768px) { .layout-container { flex-direction: row; padding: 40px; } }
+        
+        /* COMPORTAMIENTO EN PC (Pantallas grandes) */
+        @media (min-width: 768px) { 
+          .layout-container { flex-direction: row; padding: 40px; } 
+          .graph-area { flex: 3; height: 80vh; } 
+        }
       `}</style>
 
       <div className="layout-container">
